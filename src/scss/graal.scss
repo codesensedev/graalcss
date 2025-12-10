@@ -1,0 +1,255 @@
+/*!
+ * Graal - Minimalist CSS library for building complex responsive layouts
+ *
+ * Copyright (c) 2025 Lucian Pacurar
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+:root {
+    --graal-space-0:    0;
+    --graal-space-xs:   0.25rem;
+    --graal-space-s:    0.5rem;
+    --graal-space-m:    0.75rem;
+    --graal-space-l:    1rem;
+    --graal-space-xl:   1.5rem;
+    --graal-space-2xl:  2.25rem;
+
+    --graal-width-xs:   200px;
+    --graal-width-s:    400px;
+    --graal-width-m:    640px;
+    --graal-width-l:    768px;
+    --graal-width-xl:   1000px;
+    --graal-width-2xl:  1280px;
+
+    --graal-gap-default: var(--graal-space-s);
+
+    --graal-border: solid 1px hsl(0, 0%, 90%);
+    --graal-border-radius: var(--graal-space-xs);
+}
+
+/*
+ * Set box-sizing to border-box for all graal components 
+ * so padding/border are included in the width.
+ */
+[class*="graal-"] {
+    box-sizing: border-box;
+}
+
+/*
+ * stack
+ */
+
+.graal-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: var(--graal-gap-default);
+}
+
+/*
+ * flank
+ */
+
+.graal-flank {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--graal-gap-default);
+
+    &>:last-child {
+        flex-basis: 0;
+        flex-grow: 999;
+    }
+}
+
+.graal-flank--end {
+    &>:first-child {
+        flex-basis: 0;
+        flex-grow: 999;
+    }
+    &>:last-child {
+        flex-basis: auto;
+        flex-grow: 0;
+    }
+}
+
+/*
+ * split
+ */
+
+.graal-split {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--graal-gap-default);
+}
+
+.graal-split--equal > * {
+    flex: 1 1 0;
+    min-width: 0; /* prevents overflow */
+}
+
+/*
+ * cluster
+ */
+
+.graal-cluster {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--graal-gap-default);
+}
+
+/*
+ * grid
+ */
+
+ .graal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
+    gap: var(--graal-gap-default);
+}
+
+.graal-grid--col-xs { grid-template-columns: repeat(auto-fit, minmax(2em, 1fr)); }
+.graal-grid--col-s { grid-template-columns: repeat(auto-fit, minmax(4em, 1fr)); }
+.graal-grid--col-m { grid-template-columns: repeat(auto-fit, minmax(8em, 1fr)); }
+.graal-grid--col-l { grid-template-columns: repeat(auto-fit, minmax(12em, 1fr)); }
+.graal-grid--col-xl { grid-template-columns: repeat(auto-fit, minmax(16em, 1fr)); }
+.graal-grid--col-2xl { grid-template-columns: repeat(auto-fit, minmax(20em, 1fr)); }
+
+.graal-grid--item-span-2 { grid-column: span 2; }
+
+/*
+ * frame
+ */
+
+.graal-frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    & > img {
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain; /* preserve aspect ratio */
+    }
+}
+
+/*
+ * divider
+ */
+
+.graal-divider {
+    align-self: stretch;
+    border-top: var(--graal-border);
+    border-left: var(--graal-border);
+}
+
+.graal-grid {
+    & > .graal-divider {
+        display: none;
+    }
+}
+
+/*
+ * modifiers
+ */
+
+// gap
+.graal--gap-0 { gap: var(--graal-space-0); }
+.graal--gap-xs { gap: var(--graal-space-xs); }
+.graal--gap-s { gap: var(--graal-space-s); }
+.graal--gap-m { gap: var(--graal-space-m); }
+.graal--gap-l { gap: var(--graal-space-l); }
+.graal--gap-xl { gap: var(--graal-space-xl); }
+.graal--gap-2xl { gap: var(--graal-space-2xl); }
+
+// padding
+.graal--pad-0 { padding: var(--graal-space-0); }
+.graal--pad-xs { padding: var(--graal-space-xs); }
+.graal--pad-s { padding: var(--graal-space-s); }
+.graal--pad-m { padding: var(--graal-space-m); }
+.graal--pad-l { padding: var(--graal-space-l); }
+.graal--pad-xl { padding: var(--graal-space-xl); }
+.graal--pad-2xl { padding: var(--graal-space-2xl); }
+
+// align
+.graal--align-start { align-items: flex-start; }
+.graal--align-center { align-items: center; }
+.graal--align-end { align-items: flex-end; }
+.graal--align-stretch { align-items: stretch; }
+
+.graal-stack {
+    // text align for stack only
+    & .graal--align-start { text-align: start; }
+    & .graal--align-center { text-align: center; }
+    & .graal--align-end { text-align: end; }
+}
+
+// justify
+.graal--justify-start { justify-content: flex-start; }
+.graal--justify-center { justify-content: center; }
+.graal--justify-end { justify-content: flex-end; }
+
+// nowrap
+.graal--nowrap { flex-wrap: nowrap; }
+
+// border
+.graal--border { border: var(--graal-border); border-radius: var(--graal-border-radius); }
+
+// width limits
+.graal--w-xs { max-width: var(--graal-width-xs); margin: 0 auto; }
+.graal--w-s { max-width: var(--graal-width-s); margin: 0 auto; }
+.graal--w-m { max-width: var(--graal-width-m); margin: 0 auto; }
+.graal--w-l {  max-width: var(--graal-width-l); margin: 0 auto; }
+.graal--w-xl { max-width: var(--graal-width-xl); margin: 0 auto; }
+.graal--w-2xl { max-width: var(--graal-width-2xl); margin: 0 auto; }
+
+// height full
+.graal--h-full { height: 100%; }
+
+// height fill
+.graal--h-fill {
+    flex: 1 1 0;
+    min-height: 0; /* prevents overflow issues */
+    height: auto;   /* let flexbox control the height */
+}
+
+// fill height, overflow auto
+.graal--h-overflow-auto {
+    height: 100%;
+    overflow-y: auto;
+}
+
+// fill height, overflow scroll
+.graal--h-overflow-scroll {
+    height: 100%;
+    overflow-y: scroll;
+}

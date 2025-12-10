@@ -1,0 +1,17 @@
+{
+  "name": "graalcss",
+  "version": "0.0.1",
+  "description": "A CSS library to build generic and responsive layouts.",
+  "license": "MIT",
+  "main": "dist/css/graal.css",
+  "scripts": {
+    "build": "sass src/scss/graal.scss dist/css/graal.css --style=compressed --no-source-map"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codesensedev/graalcss"
+  },
+  "devDependencies": {
+    "sass": "^1.93.2"
+  }
+}
