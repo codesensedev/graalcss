@@ -6,24 +6,18 @@
     align-self: stretch;
     border: none;
     margin: 0;
-}
 
-.gr-stack > .gr-divider {
+    /* horizontal */
     width: 100%;
     height: 0;
-    // horizontal divider
     border-top: var(--gr-border-default);
 }
 
-// Note: dividers in flank and cluster layouts
-// work best if the content does not wrap,
-// if the content wraps, the divider may appear
-// either at the end of the current row
-// or at the beginning of the next row.
-.gr-flank > .gr-divider,
-.gr-cluster > .gr-divider {
-    width: 0;
-    height: 100%;
-    // vertical divider
-    border-left: var(--gr-border-default);
+.gr-divider {
+    &.vertical {
+        /* vertical */
+        width: 0;
+        height: 100%;
+        border-left: var(--gr-border-default);
+    }
 }
