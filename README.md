@@ -12,9 +12,3 @@
 ## Documentation
 
 coming soon
-
-generic
-responsive
-accessible
-adaptive
-layouts
