@@ -1,10 +1,10 @@
 // nowrap
 
-.graal--nowrap { 
+.gr--nowrap { 
     flex-wrap: nowrap;
 }
 
-.graal--nowrap-scroll { 
+.gr--nowrap-scroll { 
     display: flex;
     flex-wrap: nowrap; 
     overflow-x: auto; // enable horizontal scrolling
@@ -13,10 +13,10 @@
     scrollbar-gutter: stable; // prevent layout shift when scrollbar appears
 }
 
-.graal--nowrap-scroll > * {
+.gr--nowrap-scroll > * {
     flex: 0 0 auto; // keep each child item at its ideal width; causes horizontal overflow
 }
 
-.graal--wrap-reverse {
+.gr--wrap-reverse {
     flex-wrap: wrap-reverse;
 }

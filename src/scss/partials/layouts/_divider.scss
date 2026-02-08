@@ -2,13 +2,13 @@
  * divider
  */
 
-.graal-divider {
+.gr-divider {
     align-self: stretch;
     border: none;
     margin: 0;
 }
 
-.graal-stack > .graal-divider {
+.gr-stack > .gr-divider {
     width: 100%;
     height: 0;
     // horizontal divider
@@ -20,8 +20,8 @@
 // if the content wraps, the divider may appear
 // either at the end of the current row
 // or at the beginning of the next row.
-.graal-flank > .graal-divider,
-.graal-cluster > .graal-divider {
+.gr-flank > .gr-divider,
+.gr-cluster > .gr-divider {
     width: 0;
     height: 100%;
     // vertical divider

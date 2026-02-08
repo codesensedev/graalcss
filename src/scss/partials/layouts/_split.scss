@@ -2,7 +2,7 @@
  * split
  */
 
-.graal-split {
+.gr-split {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -11,7 +11,7 @@
     gap: var(--graal-gap-default);
 }
 
-.graal-split--equal > * {
+.gr-split--equal > * {
     flex: 1 1 0;
     min-width: 0; /* prevents overflow */
 }

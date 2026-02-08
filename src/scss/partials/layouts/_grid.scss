@@ -2,22 +2,22 @@
  * grid
  */
 
- .graal-grid {
+ .gr-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(var(--graal-grid-s), 1fr));
     gap: var(--graal-gap-default);
 }
 
-.graal-grid--fit-xs { grid-template-columns: repeat(auto-fit, minmax(var(--graal-grid-xs), 1fr)); }
-.graal-grid--fit-s { grid-template-columns: repeat(auto-fit, minmax(var(--graal-grid-s), 1fr)); }
-.graal-grid--fit-m { grid-template-columns: repeat(auto-fit, minmax(var(--graal-grid-m), 1fr)); }
-.graal-grid--fit-l { grid-template-columns: repeat(auto-fit, minmax(var(--graal-grid-l), 1fr)); }
-.graal-grid--fit-xl { grid-template-columns: repeat(auto-fit, minmax(var(--graal-grid-xl), 1fr)); }
-.graal-grid--fit-2xl { grid-template-columns: repeat(auto-fit, minmax(var(--graal-grid-2xl), 1fr)); }
+.gr-grid--fit-xs { grid-template-columns: repeat(auto-fit, minmax(var(--graal-grid-xs), 1fr)); }
+.gr-grid--fit-s { grid-template-columns: repeat(auto-fit, minmax(var(--graal-grid-s), 1fr)); }
+.gr-grid--fit-m { grid-template-columns: repeat(auto-fit, minmax(var(--graal-grid-m), 1fr)); }
+.gr-grid--fit-l { grid-template-columns: repeat(auto-fit, minmax(var(--graal-grid-l), 1fr)); }
+.gr-grid--fit-xl { grid-template-columns: repeat(auto-fit, minmax(var(--graal-grid-xl), 1fr)); }
+.gr-grid--fit-2xl { grid-template-columns: repeat(auto-fit, minmax(var(--graal-grid-2xl), 1fr)); }
 
-.graal-grid--fill-xs { grid-template-columns: repeat(auto-fill, minmax(var(--graal-grid-xs), 1fr)); }
-.graal-grid--fill-s { grid-template-columns: repeat(auto-fill, minmax(var(--graal-grid-s), 1fr)); }
-.graal-grid--fill-m { grid-template-columns: repeat(auto-fill, minmax(var(--graal-grid-m), 1fr)); }
-.graal-grid--fill-l { grid-template-columns: repeat(auto-fill, minmax(var(--graal-grid-l), 1fr)); }
-.graal-grid--fill-xl { grid-template-columns: repeat(auto-fill, minmax(var(--graal-grid-xl), 1fr)); }
-.graal-grid--fill-2xl { grid-template-columns: repeat(auto-fill, minmax(var(--graal-grid-2xl), 1fr)); }
+.gr-grid--fill-xs { grid-template-columns: repeat(auto-fill, minmax(var(--graal-grid-xs), 1fr)); }
+.gr-grid--fill-s { grid-template-columns: repeat(auto-fill, minmax(var(--graal-grid-s), 1fr)); }
+.gr-grid--fill-m { grid-template-columns: repeat(auto-fill, minmax(var(--graal-grid-m), 1fr)); }
+.gr-grid--fill-l { grid-template-columns: repeat(auto-fill, minmax(var(--graal-grid-l), 1fr)); }
+.gr-grid--fill-xl { grid-template-columns: repeat(auto-fill, minmax(var(--graal-grid-xl), 1fr)); }
+.gr-grid--fill-2xl { grid-template-columns: repeat(auto-fill, minmax(var(--graal-grid-2xl), 1fr)); }

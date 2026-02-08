@@ -1,12 +1,12 @@
 // align
-.graal--align-start { align-items: flex-start; }
-.graal--align-center { align-items: center; }
-.graal--align-end { align-items: flex-end; }
-.graal--align-stretch { align-items: stretch; }
+.gr--align-start { align-items: flex-start; }
+.gr--align-center { align-items: center; }
+.gr--align-end { align-items: flex-end; }
+.gr--align-stretch { align-items: stretch; }
 
-.graal-stack {
+.gr-stack {
     // text align for stack only
-    & .graal--align-start { text-align: start; }
-    & .graal--align-center { text-align: center; }
-    & .graal--align-end { text-align: end; }
+    & .gr--align-start { text-align: start; }
+    & .gr--align-center { text-align: center; }
+    & .gr--align-end { text-align: end; }
 }

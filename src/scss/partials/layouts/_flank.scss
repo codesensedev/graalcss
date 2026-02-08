@@ -2,7 +2,7 @@
  * flank
  */
 
-.graal-flank {
+.gr-flank {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -15,7 +15,7 @@
     }
 }
 
-.graal-flank--end {
+.gr-flank--end {
     &>:first-child {
         flex-basis: 0;
         flex-grow: 999;

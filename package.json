@@ -1,6 +1,6 @@
 {
   "name": "graalcss",
-  "version": "0.0.1",
+  "version": "0.0.15",
   "description": "Minimalist CSS library for building complex responsive layouts",
   "license": "MIT",
   "main": "dist/css/graal.css",
