@@ -2,7 +2,9 @@
  * grid
  */
 
- .gr-grid {
+// Keep in sync with: src/js/layouts/_grid.css.ts
+
+.gr-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(var(--gr-grid-s), 1fr));
     gap: var(--gr-gap-default);

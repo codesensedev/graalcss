@@ -1,0 +1,64 @@
+import typescript from '@rollup/plugin-typescript';
+import resolve from '@rollup/plugin-node-resolve';
+import terser from '@rollup/plugin-terser';
+
+// Plugin to minify CSS in template literals
+function minifyLitCSS() {
+  return {
+    name: 'minify-lit-css',
+    transform(code, id) {
+      if (id.endsWith('.ts') || id.endsWith('.js')) {
+        // Minify CSS in css`...` or lit.css`...` template literals
+        // Regex matches `css` preceded by a word boundary or property access
+        const transformed = code.replace(/(\bcss)\s*`([\s\S]*?)`/g, (match, tag, css) => {
+          const minified = css
+            .replace(/\s*\n\s*/g, ' ')           // Remove newlines and extra spaces
+            .replace(/\s*([{}:;,])\s*/g, '$1')   // Remove spaces around punctuation
+            .replace(/:\s+/g, ':')               // Remove spaces after colons
+            .replace(/\s+/g, ' ')                // Collapse multiple spaces
+            .trim();
+          
+          return `${tag}\`${minified}\``;
+        });
+        
+        if (transformed !== code) {
+          return { code: transformed, map: null };
+        }
+      }
+      return null;
+    }
+  };
+}
+
+export default {
+  input: 'src/js/index.ts',
+  output: {
+    file: 'dist/js/graal.js',
+    format: 'esm',
+    sourcemap: true
+  },
+  plugins: [
+    resolve(),
+    typescript({
+      tsconfig: './tsconfig.json',
+      declaration: true,
+      declarationDir: './dist/js/types'
+    }),
+    minifyLitCSS(),  // Run after TypeScript to affect compiled JS (uses loose regex to catch aliased imports)
+    terser({
+      ecma: 2020,
+      format: {
+        comments: false
+      },
+      compress: {
+        drop_console: false,
+        passes: 2
+      },
+      mangle: {
+        properties: {
+          regex: /^_/
+        }
+      }
+    })
+  ]
+};

@@ -1,22 +1,43 @@
 {
   "name": "graalcss",
-  "version": "0.0.15",
+  "version": "0.0.16",
+  "type": "module",
   "description": "Minimalist CSS library for building complex responsive layouts",
   "license": "MIT",
-  "main": "dist/css/graal.css",
+  "main": "dist/js/graal.js",
+  "module": "dist/js/graal.js",
   "style": "dist/css/graal.css",
+  "types": "dist/js/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/js/types/index.d.ts",
+      "import": "./dist/js/graal.js",
+      "default": "./dist/js/graal.js"
+    },
+    "./css": "./dist/css/graal.css",
+    "./graal.css": "./dist/css/graal.css"
+  },
   "files": [
     "dist"
   ],
   "scripts": {
     "prepublishOnly": "npm run build",
-    "build": "sass src/scss/graal.scss dist/css/graal.css --style=compressed --no-source-map"
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "sass src/scss/graal.scss dist/css/graal.css --style=compressed --no-source-map",
+    "build:js": "rollup -c"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/codesensedev/graalcss"
   },
   "devDependencies": {
-    "sass": "^1.93.2"
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.3.0",
+    "lit": "^3.3.2",
+    "rollup": "^4.57.1",
+    "sass": "^1.93.2",
+    "tslib": "^2.8.1",
+    "typescript": "^5.9.3"
   }
 }
