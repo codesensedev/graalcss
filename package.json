@@ -1,6 +1,6 @@
 {
   "name": "@codesense/graal",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "type": "module",
   "description": "Minimalist library for building complex responsive layouts",
   "license": "MIT",
@@ -28,7 +28,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/codesensedev/graalcss"
+    "url": "https://github.com/codesensedev/graal"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^16.0.3",
